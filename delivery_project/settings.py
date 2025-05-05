@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from decouple import config
+from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,7 +9,14 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '10.0.2.2']
+ALLOWED_HOSTS = [
+    'localhost',
+    '10.0.2.2',
+    'cvazy-delback-080b.twc1.net',
+    'www.cvazy-delback-080b.twc1.net',
+    'delivery-front.netlify.app',
+    'www.delivery-front.netlify.app'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -126,8 +134,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 20,
 }
 
-from datetime import timedelta
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
@@ -166,6 +172,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'http://10.0.2.2:8000',
+    'https://delivery-front.netlify.app/'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
