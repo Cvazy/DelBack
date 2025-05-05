@@ -172,6 +172,12 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'http://10.0.2.2:8000',
+    'https://delivery-front.netlify.app',
+    'https://cvazy-delback-080b.twc1.net'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://cvazy-delback-080b.twc1.net',
     'https://delivery-front.netlify.app'
 ]
 
